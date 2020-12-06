@@ -9,6 +9,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 Sublist3r/
+data/
 build/
 develop-eggs/
 dist/
