@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>CN Project</title>
+</head>
+
+<body>
+    {% block body %}{% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('#subdomain-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/subdomains",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+
+            $('#portScanner-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/portScanner",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+            
+            $('#hopCounter-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/hopCounter",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+
+            $('#ipDns-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/ipDns",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+
+            $('#ping-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/ping",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+
+            $('#arp-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/arp",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            console.log(data)
+                        }
+                    }
+                });
+            });
+
+            $('#track-btn').on('click',function(e){
+                e.preventDefault();
+                console.log($('#ip-field').val());
+
+                $.ajax({
+                    url: "/getMap",
+                    type: "GET",
+                    contentType: 'application/json;charset=UTF-8',
+                    data: {
+                        'ip': $('#ip-field').val(),
+                    },
+                    dataType:"json",
+                    success: function (data){
+
+                        if (data.error){
+                            console.log(data);
+                            $('.conatiner').append(`<div id="snackbar">${data.error}</div>`)
+                            $('#snackbar').addClass('show');
+                            setTimeout(function(){ $('#snackbar').removeClass('show') }, 2000);
+                        }else{
+                            $('.ip_details').append(`<h4>City:${data.City}</h4>
+                            <h4>Country:${data.Country_long}</h4>
+                            <h4>Domain:${data.Domain}</h4>
+                            <h4>ISP:${data.ISP}</h4>
+                            <h4>Region:${data.Region}</h4>
+                            <h4>Timezone:${data.Timezone}</h4>
+                            <h4>Zipcode:${data.Zipcode}</h4>
+                            `)
+                            $("#map-container").html(data.map)
+                        }
+                    }
+                });
+            });
+            $('#ip-field').on('change',function(){
+                $('.ip_details').children().remove();
+            })
+            
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="conatiner">
+    <h1 class="header_ip">IP-Information Extractor</h1>
+    <div class="forms">
+        <form>
+            <input class="FormText" id="ip-field" type="text" placeholder="127.0.0.1 or https://www.example.com">
+            <button class="FormButton" id="track-btn" type="submit">Track</button>
+        </form>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <h2>Ping</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="ping-btn" type="submit">View</button>
+        </div>
+        <div class="card">
+            <h2>Subdomains</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="subdomain-btn" type="submit">View</button>
+        </div>
+        <div class="card">
+            <h2>Port Scanner</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="portScanner-btn" type="submit">View</button>
+        </div>
+        <div class="card">
+            <h2>Hop Counter</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="hopCounter-btn" type="submit">View</button>
+        </div>
+        <div class="card">
+            <h2>IP DNS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="ipDns-btn" type="submit">View</button>
+        </div>
+        <div class="card">
+            <h2>ARP</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
+            <button id="arp-btn" type="submit">View</button>
+        </div>
+    </div>
+    <div class="mapBox">
+        <h1>IP Location</h1>
+        <div class="ip_details"></div>
+        <div id="map-container">{{ variable }}</div>
+    </div>
+</div>
+{% endblock %}
