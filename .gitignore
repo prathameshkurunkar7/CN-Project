@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+Sublist3r/
 build/
 develop-eggs/
 dist/
@@ -50,7 +51,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
+subdomain.txt
 # Translations
 *.mo
 *.pot
